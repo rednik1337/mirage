@@ -14,6 +14,7 @@ _Map pages from one process into another_
 Made for fun and [Cheat Turbine](https://github.com/rednik1337/CheatTurbine)
 
 ## Getting started
+Note: the module supports Linux 5.8+
 ### Building the module
 ```
 make
