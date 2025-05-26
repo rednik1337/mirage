@@ -8,6 +8,7 @@ typedef struct mirage_ioctl_arg {
     pid_t dst_pid;
     unsigned long src_addr;
     unsigned long dst_addr;
+    unsigned long size;
 } mirage_ioctl_arg;
 
 #define MIRAGE_IOCTL_MAP _IOW('m', 0, mirage_ioctl_arg)

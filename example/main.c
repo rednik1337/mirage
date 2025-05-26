@@ -19,7 +19,8 @@ int main() {
     printf("pid: %d\naddr: %p\n", arg.src_pid, (void *)arg.src_addr);
 
     arg.dst_pid = getpid();
-    arg.dst_addr = (unsigned long)mmap(NULL, 0x1000, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    arg.dst_addr = (unsigned long)mmap(NULL, 0x1000, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+    arg.size = 0x1000;
 
     puts("Sending..");
 
@@ -39,7 +40,7 @@ int main() {
     puts("OK, completed");
 
 
-    FILE *file = fopen("output.bin", "wb");
+    FILE *file = fopen("/tmp/output.bin", "wb");
     fwrite((void *)arg.dst_addr, 1, 0x1000, file);
     fclose(file);
 
