@@ -1,5 +1,4 @@
 #pragma once
-#include <unistd.h>
 
 #define MIRAGE_DEVICE_NAME "mirage"
 #define MIRAGE_DEVICE_PATH "/dev/" MIRAGE_DEVICE_NAME
